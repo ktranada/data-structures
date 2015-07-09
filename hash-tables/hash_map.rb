@@ -1,6 +1,6 @@
 # O(n)
 
-class HashMap
+class HashSet
   attr_accessor :buckets, :num_elements
   def initialize
     # B/C = # keys is known.
@@ -46,7 +46,7 @@ class HashMap
 
   def value_hash(value)
     # Use the appropriate hash method for arbitrary object types.
-    value
+    value.hash
   end
 
 
@@ -64,8 +64,6 @@ class HashMap
     self.buckets = new_buckets
   end
 end
-
-
 
 
 if __FILE__ == $PROGRAM_NAME
