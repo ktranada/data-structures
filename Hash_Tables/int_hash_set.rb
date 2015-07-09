@@ -1,6 +1,6 @@
 # O(n)
 
-class HashSet
+class IntHashSet
   attr_accessor :buckets, :num_elements
   def initialize
     # B/C = # keys is known.
@@ -21,7 +21,7 @@ class HashSet
     return false if include?(num)
 
     # Size of HashMap is proportional to number of keys.
-    self.resize! if (num_elements + 1) > buckets.length
+    self.resize! if (num_elements + 1).fdiv(buckets.length) > 1.00
 
 
     bucket_for(num) << num
@@ -30,7 +30,7 @@ class HashSet
     true
   end
 
-  def delete(num)
+  def remove(num)
     return false unless include?(num)
 
     bucket_for(num).delete(num)
@@ -45,12 +45,8 @@ class HashSet
   end
 
   def value_hash(value)
-    # Use the appropriate hash method for arbitrary object types.
-    value.hash
+    value
   end
-
-
-
   # O(n) => # of elements that need to be re-inserted.
   # O(1) => Amortized time.
   # As input gets larger, takes twice as long before needing to resize again.
@@ -59,7 +55,9 @@ class HashSet
 
     # Rehash elements to newbuckets
     buckets.each do |bucket|
-      bucket.each { |el| bucket_for(el, new_buckets) << el }
+      bucket.each do
+        |el| bucket_for(el, new_buckets) << el
+      end
     end
     self.buckets = new_buckets
   end
@@ -68,38 +66,47 @@ end
 
 if __FILE__ == $PROGRAM_NAME
 
-  p "Checking insert."
-  hm = HashMap.new()
+  puts "\n"
+  puts "Checking insert."
+  hm = IntHashSet.new()
   p hm.buckets
   (7).times do |i|
     hm.insert(i)
-    p ("Number of elements: #{hm.num_elements}")
+    puts "# elements: #{hm.num_elements}"
   end
   p hm.buckets
 
-  p "-------------------"
+  puts "\n"
+  puts "-------------------"
+  puts "\n"
 
-  p ("Checking include.")
-  p ("Does hm include '1'? " + hm.include?(1).to_s.capitalize)
-  p ("Does hm include '10'? " + hm.include?(10).to_s.capitalize)
-  p ("Does hm include '5'? " + hm.include?(5).to_s.capitalize)
+  puts ("Checking include: ")
+  puts ("Include '1': " + hm.include?(1).to_s.capitalize)
+  puts ("Include '10': " + hm.include?(10).to_s.capitalize)
+  puts ("Include '5': " + hm.include?(5).to_s.capitalize)
+  puts ("Number of elements: #{hm.num_elements}")
 
-  p "-------------------"
+  puts "\n"
+  puts "-------------------"
+  puts "\n"
 
-  p ("Checking delete.")
-  p hm
-  p ("Did hm delete '5'? " + hm.delete(5).to_s.capitalize)
-  p ("Number of elements: #{hm.num_elements}")
-
-  p "-------------------"
-
-  p ("Checking resize")
+  puts ("Checking delete: ")
   p hm.buckets
-  p hm.insert(12)
-  p hm.insert(14)
-  p hm.insert(15)
-  p hm.buckets
-  p "#{hm.buckets.length} buckets & #{hm.num_elements} elements."
+  puts ("Delete '5': " + hm.remove(5).to_s)
+  puts ("Number of elements: #{hm.num_elements}")
 
+  puts "\n"
+  puts "-------------------"
+  puts "\n"
+
+  puts ("Checking resize: ")
+  puts  "Pre-resize: #{hm.buckets.length} buckets & #{hm.num_elements} elements "
+  p hm.buckets
+  puts ("Insert 12: " + hm.insert(12).to_s)
+  puts ("Insert 14: " + hm.insert(14).to_s)
+  puts ("Insert 15: " + hm.insert(15).to_s)
+  p hm.buckets
+  puts "Post-resize: #{hm.buckets.length} buckets & #{hm.num_elements} elements."
+  puts "\n"
 
 end
