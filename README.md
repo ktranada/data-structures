@@ -8,12 +8,12 @@ Ideally, I eventually want to double-down and alternatively write them in C.<br>
 
 (There is no order.)<br>
 
-- [ ]Array
+- [ ] Array
 - [ ] Hashing
   - [x] HashSets
   - [ ] HashMaps
 - [ ] Linked Lists
-- [ ]Stacks
+- [ ] Stacks
 - [ ] Queues
-  - [ ]Min/max queue built using min/max stacks
+  - [ ] Min/max queue built using min/max stacks
 - [ ] Trees
