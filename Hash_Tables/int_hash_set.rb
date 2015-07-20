@@ -1,5 +1,4 @@
 # O(n)
-
 class IntHashSet
   attr_accessor :buckets, :num_elements
   def initialize

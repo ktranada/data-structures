@@ -9,6 +9,8 @@ Ideally, I eventually want to double-down and alternatively write them in C.<br>
 (There is no order.)<br>
 
 - [ ] Array
+  - [x] Static Array
+  - [ ] Dynamic Array
 - [ ] Hashing
   - [x] HashSets
   - [ ] HashMaps
