@@ -3,14 +3,14 @@ My studies + implementations of various data structures.
 ===
 
 To begin, I will code several DS's in Ruby.<br>
-**EDIT** I will also include respective RSpec files for ease of testing.<br>
+**EDIT** I've included RSpec files for ease of testing.<br>
 
 ## Content
 (There is no order)<br>
 
-- [ ] Array
+- [x] Array
   - [x] Static Array
-  - [ ] Dynamic Array
+  - [x] Dynamic Array
 - [x] Hash
   - [x] HashSets
 - [ ] Linked Lists
