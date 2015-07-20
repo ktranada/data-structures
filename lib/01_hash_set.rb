@@ -1,4 +1,4 @@
-require_relative "int_hash_set"
+require_relative "00_int_hash_set"
 class HashSet < IntHashSet
   protected
   def value_hash(value)
