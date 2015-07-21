@@ -12,8 +12,8 @@ describe MaxStack do
       expect(max_stack.stack.empty?).to be true
     end
 
-    it "should not have a max value established" do
-      expect{max_stack.max}.to raise_error("Stack is empty")
+    it "should initialize with a nil max value" do
+      expect(max_stack.max).to be(nil)
     end
   end
 
@@ -61,8 +61,8 @@ describe MaxStack do
   end
 
   describe "max" do
-    it "should not work on an empty stack" do
-      expect{max_stack.max}.to raise_error("Stack is empty")
+    it "should return nil for an empty stack" do
+      expect(max_stack.max).to be(nil)
     end
 
     it "should return the most recent max" do

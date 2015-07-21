@@ -8,16 +8,31 @@ To begin, I will code several DS's in Ruby.<br>
 ## Content
 (There is no order)<br>
 
+Data Structures
 - [x] Array
   - [x] Static Array
   - [x] Dynamic Array
-- [x] Hash
-  - [x] HashSets
 - [ ] Linked Lists
-- [ ] Stacks
-- [ ] Queues
-  - [ ] Min/max queue built using min/max stacks
+  - [ ] Single Linked List
+  - [x] Doubly Linked List
+- [ ] HashMap
 - [ ] Trees
+  - [ ] BST
+
+ADT
+- [x] HashSet
+- [x] MaxStack
+- [x] MinMax Stack
+- [x] MinMax StackQueue
+  - MinMax Queue built using MinMax Stacks
+
+**Notes**
+
+`HashMap VS HashSet`
+A `HashMap` is an implementation of a `Map`, where keys are mapped to a values.
+
+A `HashSet` is an implementation of `Set`, where each element is unique value.
+
 
 ----
 ## Testing

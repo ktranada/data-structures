@@ -46,6 +46,7 @@ class IntHashSet
   def value_hash(value)
     value
   end
+
   # O(n) => # of elements that need to be re-inserted.
   # O(1) => Amortized time.
   # As input gets larger, takes twice as long before needing to resize again.

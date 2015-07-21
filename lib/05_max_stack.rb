@@ -21,7 +21,7 @@ class MaxStack
 
   # O(1)
   def max
-    raise "Stack is empty" if @stack.empty?
+    return nil if @stack.empty?
     @stack[-1][1]
   end
 end
