@@ -57,7 +57,4 @@ RSpec.describe IntHashSet do
       expect(ihs.num_elements).to be 9
     end
   end
-
-
-
 end
