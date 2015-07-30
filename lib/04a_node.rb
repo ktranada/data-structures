@@ -1,4 +1,4 @@
-class Link
+class Node
   attr_accessor :next, :prev, :adjustable
   def initialize(value, adjustable = true)
     @val, @next, @prev, @adjustable = value, nil, nil, adjustable

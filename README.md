@@ -23,12 +23,14 @@ ADT
 - [x] HashSet
 - [x] MaxStack
 - [x] MinMax Stack
+  - Built on Arrays
 - [x] MinMax StackQueue
   - MinMax Queue built using MinMax Stacks
 
 **Notes**
 
 `HashMap VS HashSet`
+
 A `HashMap` is an implementation of a `Map`, where keys are mapped to a values.
 
 A `HashSet` is an implementation of `Set`, where each element is unique value.

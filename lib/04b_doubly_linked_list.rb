@@ -1,10 +1,10 @@
-require_relative '04a_link_class'
+require_relative '04a_node'
 
 class LinkedList
   attr_accessor :head, :tail
   def initialize
-    @head = Link.new(nil, false)
-    @tail = Link.new(nil, false)
+    @head = Node.new(nil, false)
+    @tail = Node.new(nil, false)
     @node_count = 0
 
     @head.insert_right(@tail)
